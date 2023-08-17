@@ -23,6 +23,9 @@ import { FiltersComponent } from "./pages/home/components/filters/filters.compon
 import { ProductBoxComponent } from "./pages/home/components/product-box/product-box.component";
 import { CartComponent } from "./pages/cart/cart.component";
 import { CartService } from "./services/cart.service";
+import { LocalStorageService } from "./services/local-storage.service";
+import { StoreService } from "./services/store.service";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -50,8 +53,9 @@ import { CartService } from "./services/cart.service";
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
+    HttpClientModule,
   ],
-  providers: [CartService],
+  providers: [CartService, LocalStorageService, StoreService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
