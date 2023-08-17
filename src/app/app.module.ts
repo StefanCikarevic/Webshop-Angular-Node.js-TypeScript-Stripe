@@ -25,7 +25,9 @@ import { CartComponent } from "./pages/cart/cart.component";
 import { CartService } from "./services/cart.service";
 import { LocalStorageService } from "./services/local-storage.service";
 import { StoreService } from "./services/store.service";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
+import { SkeletonLoaderComponent } from './components/skeleton-loader/skeleton-loader.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
     FiltersComponent,
     ProductBoxComponent,
     CartComponent,
+    SkeletonLoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
     MatBadgeModule,
     MatSnackBarModule,
     HttpClientModule,
+    NgxSkeletonLoaderModule,
   ],
   providers: [CartService, LocalStorageService, StoreService],
   bootstrap: [AppComponent],

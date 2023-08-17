@@ -7,7 +7,7 @@
                 (sortChange)="onSortChange($event)"
                 (itemsCountChanges)="onItemsCountChange($event)"
                 (columnsCountChange)="onColumnsCountChange($event)"></app-products-header>
-        <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight">
+        <mat-grid-list gutterSize="16" [cols]="cols" [rowHeight]="rowHeight" *ngIf="products; else spinner">
             <mat-grid-tile *ngFor="let product of products">
                 <app-product-box
                         [product]="product"
@@ -16,4 +16,12 @@
             </mat-grid-tile>
         </mat-grid-list>
     </mat-drawer-content>
+    <ng-template #spinner>
+        <app-skeleton-loader></app-skeleton-loader>
+        <app-skeleton-loader></app-skeleton-loader>
+        <app-skeleton-loader></app-skeleton-loader>
+        <app-skeleton-loader></app-skeleton-loader>
+    </ng-template>
 </mat-drawer-container>
+
+
